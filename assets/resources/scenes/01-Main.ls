@@ -22,7 +22,23 @@
       "anchorY": 0.5,
       "centerX": 0,
       "skin": "res://f358d433-bb3e-4d13-9ae5-caa74cae759c",
-      "color": "#000000"
+      "color": "#000000",
+      "_$comp": [
+        {
+          "_$type": "7b9c0dc3-01e9-4c87-b36f-80c216bb635a",
+          "scriptPath": "../src/Circle.ts",
+          "rotateSpeed": 90
+        }
+      ]
+    },
+    {
+      "_$id": "sztdvbi2",
+      "_$prefab": "8fd6b70c-006d-4836-9f67-547bac5ac4b4",
+      "name": "Pin",
+      "active": true,
+      "x": 360,
+      "y": 601,
+      "visible": true
     }
   ]
 }
