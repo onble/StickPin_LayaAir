@@ -20,7 +20,6 @@
       "height": 300,
       "anchorX": 0.5,
       "anchorY": 0.5,
-      "centerX": 0,
       "skin": "res://f358d433-bb3e-4d13-9ae5-caa74cae759c",
       "color": "#000000",
       "_$comp": [
@@ -116,7 +115,8 @@
           "pinPrefab": {
             "_$uuid": "8fd6b70c-006d-4836-9f67-547bac5ac4b4",
             "_$type": "Prefab"
-          }
+          },
+          "moveDuration": 0.5
         }
       ]
     }

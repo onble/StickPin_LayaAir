@@ -1,28 +1,11 @@
-import { Pin } from "./Pin";
-
 const { regClass, property } = Laya;
 
 @regClass()
-export class GameManager extends Laya.Script {
+export class Pin extends Laya.Script {
     declare owner: Laya.Sprite;
 
-    @property({ type: Laya.Sprite, default: null })
-    p1: Laya.Sprite = null;
-    @property({ type: Laya.Sprite, default: null })
-    p2: Laya.Sprite = null;
-    @property({ type: Laya.Sprite, default: null })
-    p3: Laya.Sprite = null;
-
-    @property({ type: Laya.Prefab, default: null })
-    pinPrefab: Laya.Prefab = null;
-
-    @property(Number)
-    moveDuration: number = 0.5;
-
     //组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
-    onAwake(): void {
-        this.pinSpawn();
-    }
+    onAwake(): void {}
 
     //组件被启用后执行，例如节点被添加到舞台后
     //onEnable(): void {}
@@ -38,15 +21,9 @@ export class GameManager extends Laya.Script {
 
     //每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
     //onUpdate(): void {}
-    pinSpawn() {
-        const pinNode = this.pinPrefab.create() as Laya.Sprite;
-        pinNode.pos(this.p1.x, this.p1.y);
-        this.owner.addChild(pinNode);
 
-        const pin = pinNode.getComponent(Pin);
-        if (pin) {
-            pin.moveTo(new Laya.Vector2(this.p2.x, this.p2.y), this.moveDuration);
-        }
+    moveTo(target: Laya.Vector2, duration: number) {
+        Laya.Tween.to(this.owner, { x: target.x, y: target.y }, duration * 1000);
     }
 
     //每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法

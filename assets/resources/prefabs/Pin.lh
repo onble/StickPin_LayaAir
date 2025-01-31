@@ -7,6 +7,12 @@
   "y": 601,
   "width": 100,
   "height": 100,
+  "_$comp": [
+    {
+      "_$type": "0a91c907-6a17-405c-bca1-12fbd5718c47",
+      "scriptPath": "../src/Pin.ts"
+    }
+  ],
   "_$child": [
     {
       "_$id": "knhgtxjn",
