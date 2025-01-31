@@ -15,7 +15,7 @@
       "_$type": "Image",
       "name": "Circle",
       "x": 360,
-      "y": 396,
+      "y": 360,
       "width": 300,
       "height": 300,
       "anchorX": 0.5,
@@ -32,13 +32,93 @@
       ]
     },
     {
-      "_$id": "sztdvbi2",
-      "_$prefab": "8fd6b70c-006d-4836-9f67-547bac5ac4b4",
-      "name": "Pin",
-      "active": true,
+      "_$id": "lsuytmcx",
+      "_$type": "Sprite",
+      "name": "Position1",
       "x": 360,
-      "y": 601,
-      "visible": true
+      "y": 1328,
+      "width": 100,
+      "height": 100,
+      "visible": false,
+      "_$child": [
+        {
+          "_$id": "sztdvbi2",
+          "_$prefab": "8fd6b70c-006d-4836-9f67-547bac5ac4b4",
+          "name": "Pin",
+          "active": true,
+          "x": 0,
+          "y": 0,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "_$id": "f76wdhkc",
+      "_$type": "Sprite",
+      "name": "Position2",
+      "x": 360,
+      "y": 891,
+      "width": 100,
+      "height": 100,
+      "visible": false,
+      "_$child": [
+        {
+          "_$id": "leq2h173",
+          "_$prefab": "8fd6b70c-006d-4836-9f67-547bac5ac4b4",
+          "name": "Pin",
+          "active": true,
+          "x": 0,
+          "y": 0,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "_$id": "zqjl8z23",
+      "_$type": "Sprite",
+      "name": "Position3",
+      "x": 360,
+      "y": 508,
+      "width": 100,
+      "height": 100,
+      "visible": false,
+      "_$child": [
+        {
+          "_$id": "xjlatpy5",
+          "_$prefab": "8fd6b70c-006d-4836-9f67-547bac5ac4b4",
+          "name": "Pin",
+          "active": true,
+          "x": 0,
+          "y": 0,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "_$id": "r10hr1pn",
+      "_$type": "Sprite",
+      "name": "GameManager",
+      "width": 100,
+      "height": 100,
+      "_$comp": [
+        {
+          "_$type": "be9778dc-1684-499b-a245-c3ea661858bf",
+          "scriptPath": "../src/GameManager.ts",
+          "p1": {
+            "_$ref": "lsuytmcx"
+          },
+          "p2": {
+            "_$ref": "f76wdhkc"
+          },
+          "p3": {
+            "_$ref": "zqjl8z23"
+          },
+          "pinPrefab": {
+            "_$uuid": "8fd6b70c-006d-4836-9f67-547bac5ac4b4",
+            "_$type": "Prefab"
+          }
+        }
+      ]
     }
   ]
 }
