@@ -1,0 +1,14 @@
+{
+  "resolution": {
+    "designWidth": 720,
+    "designHeight": 1280,
+    "backgroundColor": "rgba(197, 197, 152, 1)"
+  },
+  "modules": {
+    "laya.ui": true,
+    "laya.d3": true
+  },
+  "splash": {
+    "fit": "center"
+  }
+}
