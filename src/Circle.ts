@@ -31,6 +31,7 @@ export class Circle extends Laya.Script {
         let deltaTime = Laya.timer.delta / 1000;
         // console.log("deltaTime: " + deltaTime);
         this.owner.rotation += this.rotateSpeed * deltaTime;
+        this.owner.rotation %= 360;
     }
 
     //每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法

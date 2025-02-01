@@ -19,8 +19,19 @@ export class GameManager extends Laya.Script {
     @property(Number)
     moveDuration: number = 0.5;
 
+    @property(Laya.Sprite)
+    circleNode: Laya.Sprite = null;
+
+    private curPin: Pin = null;
+
     //组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
     onAwake(): void {
+        this.pinSpawn();
+        Laya.stage.on(Laya.Event.MOUSE_DOWN, this, this.onTouchStart);
+    }
+
+    onTouchStart(e: Laya.Event) {
+        this.curPin.moveTo(new Laya.Vector2(this.p3.x, this.p3.y), this.moveDuration, this.circleNode);
         this.pinSpawn();
     }
 
@@ -34,7 +45,9 @@ export class GameManager extends Laya.Script {
     //onStart(): void {}
 
     //手动调用节点销毁时执行
-    //onDestroy(): void {}
+    onDestroy(): void {
+        Laya.stage.off(Laya.Event.MOUSE_DOWN, this, this.onTouchStart);
+    }
 
     //每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
     //onUpdate(): void {}
@@ -43,9 +56,11 @@ export class GameManager extends Laya.Script {
         pinNode.pos(this.p1.x, this.p1.y);
         this.owner.addChild(pinNode);
 
-        const pin = pinNode.getComponent(Pin);
-        if (pin) {
-            pin.moveTo(new Laya.Vector2(this.p2.x, this.p2.y), this.moveDuration);
+        this.curPin = pinNode.getComponent(Pin);
+        if (this.curPin) {
+            this.curPin.moveTo(new Laya.Vector2(this.p2.x, this.p2.y), this.moveDuration);
+        } else {
+            console.error("你实例化的针身上没有Pin组件，请检查。");
         }
     }
 

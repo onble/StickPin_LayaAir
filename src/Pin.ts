@@ -22,8 +22,26 @@ export class Pin extends Laya.Script {
     //每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
     //onUpdate(): void {}
 
-    moveTo(target: Laya.Vector2, duration: number) {
-        Laya.Tween.to(this.owner, { x: target.x, y: target.y }, duration * 1000);
+    moveTo(target: Laya.Vector2, duration: number, parentNode: Laya.Sprite = null) {
+        Laya.Tween.to(
+            this.owner,
+            { x: target.x, y: target.y },
+            duration * 1000,
+            null,
+            Laya.Handler.create(this, () => {
+                if (parentNode != null) {
+                    parentNode.addChild(this.owner);
+                    if (parentNode.rotation <= 180) {
+                        this.owner.x = 150 - 150 * Math.sin((-parentNode.rotation * Math.PI) / 180);
+                        this.owner.y = 150 + 150 * Math.cos((-parentNode.rotation * Math.PI) / 180);
+                    } else {
+                        this.owner.x = 150 - 150 * Math.sin((-parentNode.rotation * Math.PI) / 180);
+                        this.owner.y = 150 + 150 * Math.cos(-(parentNode.rotation * Math.PI) / 180);
+                    }
+                    this.owner.rotation = -parentNode.rotation;
+                }
+            })
+        );
     }
 
     //每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法

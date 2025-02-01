@@ -11,37 +11,64 @@
   "height": 1280,
   "_$child": [
     {
-      "_$id": "a04an7e8",
+      "_$id": "5mm87mm8",
       "_$type": "Image",
       "name": "Circle",
       "x": 360,
-      "y": 360,
+      "y": 360.00000000000034,
       "width": 300,
       "height": 300,
       "anchorX": 0.5,
       "anchorY": 0.5,
+      "_mouseState": 2,
       "skin": "res://f358d433-bb3e-4d13-9ae5-caa74cae759c",
-      "color": "#000000",
+      "color": "#a32637",
       "_$comp": [
         {
           "_$type": "7b9c0dc3-01e9-4c87-b36f-80c216bb635a",
           "scriptPath": "../src/Circle.ts",
           "rotateSpeed": 90
         }
+      ],
+      "_$child": [
+        {
+          "_$id": "at2j0065",
+          "_$type": "Sprite",
+          "name": "Position",
+          "x": 150,
+          "y": 300,
+          "width": 6,
+          "height": 38,
+          "texture": {
+            "_$uuid": "00000000-0000-0000-0001-000000000000",
+            "_$type": "Texture"
+          },
+          "_$child": [
+            {
+              "_$id": "jsqh4dxy",
+              "_$prefab": "8fd6b70c-006d-4836-9f67-547bac5ac4b4",
+              "name": "Pin",
+              "active": true,
+              "x": 0,
+              "y": 0,
+              "visible": true
+            }
+          ]
+        }
       ]
     },
     {
-      "_$id": "lsuytmcx",
+      "_$id": "juks1vvm",
       "_$type": "Sprite",
       "name": "Position1",
       "x": 360,
-      "y": 1328,
+      "y": 1311,
       "width": 100,
       "height": 100,
       "visible": false,
       "_$child": [
         {
-          "_$id": "sztdvbi2",
+          "_$id": "aqk7d7x7",
           "_$prefab": "8fd6b70c-006d-4836-9f67-547bac5ac4b4",
           "name": "Pin",
           "active": true,
@@ -56,7 +83,7 @@
       "_$type": "Sprite",
       "name": "Position2",
       "x": 360,
-      "y": 891,
+      "y": 919,
       "width": 100,
       "height": 100,
       "visible": false,
@@ -104,7 +131,7 @@
           "_$type": "be9778dc-1684-499b-a245-c3ea661858bf",
           "scriptPath": "../src/GameManager.ts",
           "p1": {
-            "_$ref": "lsuytmcx"
+            "_$ref": "juks1vvm"
           },
           "p2": {
             "_$ref": "f76wdhkc"
@@ -116,7 +143,10 @@
             "_$uuid": "8fd6b70c-006d-4836-9f67-547bac5ac4b4",
             "_$type": "Prefab"
           },
-          "moveDuration": 0.5
+          "moveDuration": 0.2,
+          "circleNode": {
+            "_$ref": "5mm87mm8"
+          }
         }
       ]
     }
