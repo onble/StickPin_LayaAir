@@ -1,5 +1,8 @@
 import { Circle } from "./Circle";
+import { GameOverManager } from "./GameOverManager";
+import { GameDate } from "./Instance/GameDate";
 import { Pin } from "./Pin";
+import { Assert } from "./utils/Assert";
 
 const { regClass, property } = Laya;
 
@@ -35,12 +38,16 @@ export class GameManager extends Laya.Script {
     private curPin: Pin = null;
     private score: number = 0;
     private isGameOver: boolean = false;
+    private _GameOverManager: GameOverManager = null;
 
     //组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
     onAwake(): void {
         GameManager._inst = this;
         this.pinSpawn();
         Laya.stage.on(Laya.Event.MOUSE_DOWN, this, this.onTouchStart);
+        const Scene2D = this.owner.parent || Assert.ChildNotNull;
+        const GameOver = (Scene2D.getChildByName("GameOver") as Laya.Box) || Assert.ChildNotNull;
+        this._GameOverManager = GameOver.getComponent(GameOverManager) || Assert.ComponentNotNull;
     }
 
     onTouchStart(e: Laya.Event) {
@@ -88,10 +95,12 @@ export class GameManager extends Laya.Script {
         // console.log("游戏结束");
 
         this.circleNode.getComponent(Circle).stopRoatate();
+        GameDate.getInstance().updateLeaderboard(this.score);
 
         Laya.Tween.to(this.circleNode, { scaleX: 1.3, scaleY: 1.3 }, 500);
         Laya.timer.once(2000, this, () => {
-            Laya.Scene.open("./resources/scenes/01-Main.ls", true);
+            // Laya.Scene.open("./resources/scenes/01-Main.ls", true);
+            this._GameOverManager.showGameOver();
         });
     }
 

@@ -20,11 +20,11 @@
       "_$id": "ovav",
       "_$type": "CircleCollider",
       "x": -2,
-      "y": 208,
+      "y": 207,
       "friction": 0,
       "density": 0,
       "isSensor": true,
-      "radius": 10
+      "radius": 3
     }
   ],
   "_$child": [

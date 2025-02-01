@@ -1,4 +1,18 @@
 {
-  "name": "LayaProject1",
-  "startupScene": "res://9b931ecf-fde9-44dd-acf3-15f8dc807965"
+  "name": "StickPin",
+  "displayName": "见缝插针",
+  "icon": "res://ee96ab8d-027a-4d91-a266-f6f819aea311",
+  "startupScene": "res://9b931ecf-fde9-44dd-acf3-15f8dc807965",
+  "android": {
+    "targetArchitectures": {
+      "ARMv7": true,
+      "ARM64": false,
+      "x86": false,
+      "x86-64": false
+    },
+    "exportFormat": "APK"
+  },
+  "wxgame": {
+    "appid": "wxf96f5717bf42f6fd"
+  }
 }

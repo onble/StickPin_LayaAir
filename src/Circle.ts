@@ -1,3 +1,5 @@
+import { MusicManager } from "./Instance/MusicManager";
+
 const { regClass, property } = Laya;
 
 @regClass()
