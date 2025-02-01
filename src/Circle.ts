@@ -7,6 +7,8 @@ export class Circle extends Laya.Script {
     @property({ type: Number, default: 90, caption: "每秒旋转角度", tips: "控制圆盘旋转速度" })
     rotateSpeed: number = 90;
 
+    private isRotate: boolean = true;
+
     //组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
     onAwake(): void {
         // Laya.Stat.show(0, 0);
@@ -27,11 +29,15 @@ export class Circle extends Laya.Script {
 
     //每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
     onUpdate(): void {
+        if (this.isRotate == false) return;
         // // 将deltaTime 从毫秒转换为秒
         let deltaTime = Laya.timer.delta / 1000;
         // console.log("deltaTime: " + deltaTime);
         this.owner.rotation += this.rotateSpeed * deltaTime;
         this.owner.rotation %= 360;
+    }
+    stopRoatate() {
+        this.isRotate = false;
     }
 
     //每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法

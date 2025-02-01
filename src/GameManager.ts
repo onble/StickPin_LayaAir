@@ -1,3 +1,4 @@
+import { Circle } from "./Circle";
 import { Pin } from "./Pin";
 
 const { regClass, property } = Laya;
@@ -33,6 +34,7 @@ export class GameManager extends Laya.Script {
 
     private curPin: Pin = null;
     private score: number = 0;
+    private isGameOver: boolean = false;
 
     //组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
     onAwake(): void {
@@ -42,6 +44,7 @@ export class GameManager extends Laya.Script {
     }
 
     onTouchStart(e: Laya.Event) {
+        if (this.isGameOver) return;
         this.curPin.moveTo(new Laya.Vector2(this.p3.x, this.p3.y), this.moveDuration, this.circleNode);
         this.pinSpawn();
     }
@@ -79,7 +82,13 @@ export class GameManager extends Laya.Script {
         }
     }
 
-    gameOver() {}
+    gameOver() {
+        if (this.isGameOver) return;
+        this.isGameOver = true;
+        // console.log("游戏结束");
+
+        this.circleNode.getComponent(Circle).stopRoatate();
+    }
 
     //每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
     //onLateUpdate(): void {}

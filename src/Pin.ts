@@ -11,7 +11,9 @@ export class Pin extends Laya.Script {
         this.owner.on(Laya.Event.TRIGGER_ENTER, this, this.onBeginContact);
     }
 
-    onBeginContact() {}
+    onBeginContact() {
+        GameManager.inst.gameOver();
+    }
 
     //组件被启用后执行，例如节点被添加到舞台后
     //onEnable(): void {}
