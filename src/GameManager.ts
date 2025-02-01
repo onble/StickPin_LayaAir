@@ -26,8 +26,8 @@ export class GameManager extends Laya.Script {
     @property(Number)
     moveDuration: number = 0.5;
 
-    @property(Laya.Sprite)
-    circleNode: Laya.Sprite = null;
+    @property(Laya.Image)
+    circleNode: Laya.Image = null;
 
     @property(Laya.Text)
     scoreLabel: Laya.Text = null;
@@ -68,7 +68,7 @@ export class GameManager extends Laya.Script {
     }
 
     //每帧更新时执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
-    //onUpdate(): void {}
+    onUpdate(): void {}
     pinSpawn() {
         const pinNode = this.pinPrefab.create() as Laya.Sprite;
         pinNode.pos(this.p1.x, this.p1.y);
@@ -88,6 +88,11 @@ export class GameManager extends Laya.Script {
         // console.log("游戏结束");
 
         this.circleNode.getComponent(Circle).stopRoatate();
+
+        Laya.Tween.to(this.circleNode, { scaleX: 1.3, scaleY: 1.3 }, 500);
+        Laya.timer.once(2000, this, () => {
+            Laya.Scene.open("./resources/scenes/01-Main.ls", true);
+        });
     }
 
     //每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法

@@ -22,7 +22,7 @@
       "anchorY": 0.5,
       "_mouseState": 2,
       "skin": "res://f358d433-bb3e-4d13-9ae5-caa74cae759c",
-      "color": "#a32637",
+      "color": "#000000",
       "_$comp": [
         {
           "_$type": "7b9c0dc3-01e9-4c87-b36f-80c216bb635a",
