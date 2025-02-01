@@ -79,6 +79,8 @@ export class GameManager extends Laya.Script {
         }
     }
 
+    gameOver() {}
+
     //每帧更新时执行，在update之后执行，尽量不要在这里写大循环逻辑或者使用getComponent方法
     //onLateUpdate(): void {}
 

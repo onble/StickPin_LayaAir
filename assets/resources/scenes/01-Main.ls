@@ -39,18 +39,7 @@
       "y": 1311,
       "width": 100,
       "height": 100,
-      "visible": false,
-      "_$child": [
-        {
-          "_$id": "aqk7d7x7",
-          "_$prefab": "8fd6b70c-006d-4836-9f67-547bac5ac4b4",
-          "name": "Pin",
-          "active": true,
-          "x": 0,
-          "y": 0,
-          "visible": true
-        }
-      ]
+      "visible": false
     },
     {
       "_$id": "f76wdhkc",
@@ -60,18 +49,7 @@
       "y": 919,
       "width": 100,
       "height": 100,
-      "visible": false,
-      "_$child": [
-        {
-          "_$id": "leq2h173",
-          "_$prefab": "8fd6b70c-006d-4836-9f67-547bac5ac4b4",
-          "name": "Pin",
-          "active": true,
-          "x": 0,
-          "y": 0,
-          "visible": true
-        }
-      ]
+      "visible": false
     },
     {
       "_$id": "zqjl8z23",
@@ -81,18 +59,7 @@
       "y": 508,
       "width": 100,
       "height": 100,
-      "visible": false,
-      "_$child": [
-        {
-          "_$id": "xjlatpy5",
-          "_$prefab": "8fd6b70c-006d-4836-9f67-547bac5ac4b4",
-          "name": "Pin",
-          "active": true,
-          "x": 0,
-          "y": 0,
-          "visible": true
-        }
-      ]
+      "visible": false
     },
     {
       "_$id": "r10hr1pn",

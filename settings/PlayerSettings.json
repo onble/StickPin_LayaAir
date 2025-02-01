@@ -4,9 +4,15 @@
     "designHeight": 1280,
     "backgroundColor": "rgba(197, 197, 152, 1)"
   },
+  "physics2D": {
+    "layers": [
+      "pin"
+    ]
+  },
   "modules": {
     "laya.ui": true,
-    "laya.d3": true
+    "laya.d3": true,
+    "laya.physics2D": true
   },
   "splash": {
     "fit": "center"

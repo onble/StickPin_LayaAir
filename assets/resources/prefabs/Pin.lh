@@ -11,6 +11,20 @@
     {
       "_$type": "0a91c907-6a17-405c-bca1-12fbd5718c47",
       "scriptPath": "../src/Pin.ts"
+    },
+    {
+      "_$type": "RigidBody",
+      "allowRotation": false
+    },
+    {
+      "_$id": "ovav",
+      "_$type": "CircleCollider",
+      "x": -2,
+      "y": 248,
+      "friction": 0,
+      "density": 0,
+      "isSensor": true,
+      "radius": 10
     }
   ],
   "_$child": [
