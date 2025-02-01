@@ -6,6 +6,12 @@ const { regClass, property } = Laya;
 export class GameManager extends Laya.Script {
     declare owner: Laya.Sprite;
 
+    private static _inst: GameManager = null;
+
+    public static get inst() {
+        return this._inst;
+    }
+
     @property({ type: Laya.Sprite, default: null })
     p1: Laya.Sprite = null;
     @property({ type: Laya.Sprite, default: null })
@@ -22,10 +28,15 @@ export class GameManager extends Laya.Script {
     @property(Laya.Sprite)
     circleNode: Laya.Sprite = null;
 
+    @property(Laya.Text)
+    scoreLabel: Laya.Text = null;
+
     private curPin: Pin = null;
+    private score: number = 0;
 
     //组件被激活后执行，此时所有节点和组件均已创建完毕，此方法只执行一次
     onAwake(): void {
+        GameManager._inst = this;
         this.pinSpawn();
         Laya.stage.on(Laya.Event.MOUSE_DOWN, this, this.onTouchStart);
     }
@@ -33,6 +44,10 @@ export class GameManager extends Laya.Script {
     onTouchStart(e: Laya.Event) {
         this.curPin.moveTo(new Laya.Vector2(this.p3.x, this.p3.y), this.moveDuration, this.circleNode);
         this.pinSpawn();
+    }
+    updateScore() {
+        this.score++;
+        this.scoreLabel.text = this.score.toString();
     }
 
     //组件被启用后执行，例如节点被添加到舞台后

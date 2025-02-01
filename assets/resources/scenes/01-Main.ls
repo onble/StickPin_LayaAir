@@ -29,32 +29,6 @@
           "scriptPath": "../src/Circle.ts",
           "rotateSpeed": 90
         }
-      ],
-      "_$child": [
-        {
-          "_$id": "at2j0065",
-          "_$type": "Sprite",
-          "name": "Position",
-          "x": 150,
-          "y": 300,
-          "width": 6,
-          "height": 38,
-          "texture": {
-            "_$uuid": "00000000-0000-0000-0001-000000000000",
-            "_$type": "Texture"
-          },
-          "_$child": [
-            {
-              "_$id": "jsqh4dxy",
-              "_$prefab": "8fd6b70c-006d-4836-9f67-547bac5ac4b4",
-              "name": "Pin",
-              "active": true,
-              "x": 0,
-              "y": 0,
-              "visible": true
-            }
-          ]
-        }
       ]
     },
     {
@@ -146,9 +120,27 @@
           "moveDuration": 0.2,
           "circleNode": {
             "_$ref": "5mm87mm8"
+          },
+          "scoreLabel": {
+            "_$ref": "cl4wzzkj"
           }
         }
       ]
+    },
+    {
+      "_$id": "cl4wzzkj",
+      "_$type": "Text",
+      "name": "ScoreLabel",
+      "x": 206,
+      "y": 209,
+      "width": 305,
+      "height": 303,
+      "text": "0",
+      "fontSize": 180,
+      "color": "#FFFFFF",
+      "align": "center",
+      "valign": "middle",
+      "leading": 2
     }
   ]
 }

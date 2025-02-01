@@ -1,3 +1,5 @@
+import { GameManager } from "./GameManager";
+
 const { regClass, property } = Laya;
 
 @regClass()
@@ -39,6 +41,8 @@ export class Pin extends Laya.Script {
                         this.owner.y = 150 + 150 * Math.cos(-(parentNode.rotation * Math.PI) / 180);
                     }
                     this.owner.rotation = -parentNode.rotation;
+
+                    GameManager.inst.updateScore();
                 }
             })
         );
